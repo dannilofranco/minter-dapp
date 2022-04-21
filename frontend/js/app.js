@@ -1,5 +1,5 @@
 let accounts;
-let currentLanguage = (localStorage.getItem("language") === null) ? "en" : localStorage.getItem("language");
+let currentLanguage = (localStorage.getItem("language") === null) ? "pt" : localStorage.getItem("language");
 
 // English-Portuguese convertion
 function updatePageLanguage() {
