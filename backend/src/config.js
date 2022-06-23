@@ -7,41 +7,40 @@ const { NETWORK } = require(`${basePath}/constants/network.js`);
 const network = NETWORK.eth;
 
 // General metadata for Ethereum
-const namePrefix = "EKC v5";
-const description = "#EMO is back!!";
+const namePrefix = "Emo Kids Club";
+const description = "he Emo Kids Club NFT Project is a decentralized initiative to promote the Emo Culture where people can collaborate and have fun!! #EMO is back!!";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
     // Males
-    growEditionSizeTo: 10,
+    growEditionSizeTo: 2159,
     layersOrder: [
-      { name: "Background" },
-      { name: "Body" },
-      { name: "Clothes" },
-      { name: "Mouth" },
-      { name: "Nose" },
-      { name: "Eyes" },
-      { name: "Hair" },
-      { name: "Accessory" },
+      { name: "Male Background" },
+      { name: "Male Body" },
+      { name: "Male Clothes" },
+      { name: "Male Mouth" },
+      { name: "Male Nose" },
+      { name: "Male Eyes" },
+      { name: "Male Hair" },
+      { name: "Male Accessory" },
     ],
   },
-  // {
-  //   // Females
-  // JUST CHANGE THE FOLDER NAME
-  //   growEditionSizeTo: 20,
-  //   layersOrder: [
-  //     { name: "Background" },
-  //     { name: "Body" },
-  //     { name: "Clothes" },
-  //     { name: "Mouth" },
-  //     { name: "Nose" },
-  //     { name: "Eyes" },
-  //     { name: "Hair" },
-  //     { name: "Accessory" },
-  //   ],
-  // },
+  {
+    // Females
+    growEditionSizeTo: 4319,
+    layersOrder: [
+      { name: "Female Background" },
+      { name: "Female Body" },
+      { name: "Female Clothes" },
+      { name: "Female Mouth" },
+      { name: "Female Nose" },
+      { name: "Female Eyes" },
+      { name: "Female Hair" },
+      { name: "Female Accessory" },
+    ],
+  },
 ];
 
 // It shuffle the groups of layers
@@ -64,39 +63,38 @@ const extraMetadata = {
 // ** REQUIRED **
 const AUTH = process.env.NFTPORT_API_KEY; // Set this in the .env file to prevent exposing your API key when pushing to Github
 const LIMIT = 2; // Your API key rate limit
-const CHAIN = 'rinkeby'; // only rinkeby or polygon
+const CHAIN = 'polygon'; // only rinkeby or polygon
 
 // REQUIRED CONTRACT DETAILS THAT CANNOT BE UPDATED LATER!
-const CONTRACT_NAME = 'EKC v5';
-const CONTRACT_SYMBOL = 'EMOv5';
+const CONTRACT_NAME = 'Emo Kids Club';
+const CONTRACT_SYMBOL = 'EMO';
 const METADATA_UPDATABLE = true; // set to false if you don't want to allow metadata updates after minting
 const OWNER_ADDRESS = '0xEE87f5cd8E4A8E77E8Bd650fB3198a5056aaC4d8';
 const TREASURY_ADDRESS = '0xc3d5523e271253CEEc655bcd5c4CBFF53AD9AfCC'; //wallet that can withdraw funds from the contract
-const MAX_SUPPLY = 50; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
-const MINT_PRICE = 0.001; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
+const MAX_SUPPLY = 4319; // The maximum number of NFTs that can be minted. CANNOT BE UPDATED!
+const MINT_PRICE = 0.00001; // Minting price per NFT. Rinkeby = ETH, Polygon = MATIC. CANNOT BE UPDATED!
 // Unexpected error was due to the mint price having too many zeros.
-const TOKENS_PER_MINT = 3; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
+const TOKENS_PER_MINT = 4319; // maximum number of NFTs a user can mint in a single transaction. CANNOT BE UPDATED!
 
 // REQUIRED CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PUBLIC_MINT_START_DATE = "2022-07-30T12:00:00+03:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
+const PUBLIC_MINT_START_DATE = "2022-10-30T12:00:00+03:00"; // This is required. Eg: 2022-02-08T11:30:48+00:00
 
 // OPTIONAL CONTRACT DETAILS THAT CAN BE UPDATED LATER.
-const PRESALE_MINT_START_DATE = "2022-07-23T12:00:00+03:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00 => +00 is the time zone
+const PRESALE_MINT_START_DATE = "2022-05-23T12:00:00+03:00"; // Optional. Eg: 2022-02-08T11:30:48+00:00 => +00 is the time zone
 const ROYALTY_SHARE = 350; // Percentage of the token price that goes to the royalty address. 100 bps = 1%
 const ROYALTY_ADDRESS = "0xc3d5523e271253CEEc655bcd5c4CBFF53AD9AfCC"; // Address that will receive the royalty
 const BASE_URI = null; // only update if you want to manually set the base uri
 const PREREVEAL_TOKEN_URI = null; // only update if you want to manually set the prereveal token uri
-const PRESALE_WHITELISTED_ADDRESSES = ["0xCfCf1A4D4e4066615407630dF6e4B84d5e498CdF", 
-  "0xf5dec37016197dbab8e1e2bb0d1de58c5af34983", "0x213B0e6608A3baDf60883c69CAF480b07a448342", "0x75A45eE4d34Ca080D3194Da52343465e8143B052", "0xbda66161C453C1DE6D6101932774253C1c272D4f"]; // only update if you want to manually set the whitelisted addresses
+const PRESALE_WHITELISTED_ADDRESSES = ["0xEE87f5cd8E4A8E77E8Bd650fB3198a5056aaC4d8"]; // only update if you want to manually set the whitelisted addresses
 
 // ** OPTIONAL **
 let CONTRACT_ADDRESS = "YOUR CONTRACT ADDRESS"; // If you want to manually include it
 
 // Generic Metadata is optional if you want to reveal your NFTs
-const GENERIC = true; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
+const GENERIC = false; // Set to true if you want to upload generic metas and reveal the real NFTs in the future
 const GENERIC_TITLE = CONTRACT_NAME; // Replace with what you want the generic titles to say if you want it to be different from the contract name.
-const GENERIC_DESCRIPTION = "Unknown Emo"; // Replace with what you want the generic descriptions to say.
-const GENERIC_IMAGE = "https://ipfs.io/ipfs/QmUf9tDbkqnfHkQaMdFWSGAeXwVXWA61pFED7ypx4hcsfh"; // Replace with your generic image that will display for all NFTs pre-reveal.
+const GENERIC_DESCRIPTION = "Random Emo Kid - #EmoIsBack"; // Replace with what you want the generic descriptions to say.
+const GENERIC_IMAGE = "https://ipfs.io/ipfs/bafybeihnodookutzwwcp2v5skqlx6p5chk4k3dfx56z5mqtbzur5xpvqzu"; // Replace with your generic image that will display for all NFTs pre-reveal.
 
 // Automatically set contract address if deployed using the deployContract.js script
 try {
