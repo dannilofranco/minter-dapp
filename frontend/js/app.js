@@ -630,7 +630,7 @@ function setTotalPrice() {
     return;
   }
   //const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
-  const totalPriceWei = BigInt(0.00001) * BigInt(mintInputValue);
+  const totalPriceWei = (0.00001) * (mintInputValue);
 
   let priceType = '';
   if (chain === 'rinkeby') {
@@ -658,7 +658,7 @@ async function mint() {
   const amount = parseInt(document.getElementById("mintInput").value);
   // ATUALIZAR AQUI O MINT PRICE JA QUE ESTA VINDO ZERADO....
   //  DA ONDE ESTA VINDO ESSE info.deploymentCOnfig?!
-  const value = BigInt(0.00001) * BigInt(amount);
+  const value = (0.00001) * (amount);
   //const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
   console.log(amount + " and " + value);
   const publicMintActive = await contract.methods.mintingActive().call();
