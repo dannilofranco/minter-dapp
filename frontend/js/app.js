@@ -629,7 +629,8 @@ function setTotalPrice() {
     mintInput.value = 1;
     return;
   }
-  const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
+  //const totalPriceWei = BigInt(info.deploymentConfig.mintPrice) * BigInt(mintInputValue);
+  const totalPriceWei = BigInt(0.00001) * BigInt(mintInputValue);
 
   let priceType = '';
   if (chain === 'rinkeby') {
@@ -637,7 +638,9 @@ function setTotalPrice() {
   } else if (chain === 'polygon') {
     priceType = 'MATIC';
   }
-  const price = 0.00001 * mintInputValue;//web3.utils.fromWei(totalPriceWei.toString(), 'ether');
+  const price = totalPriceWei;
+  //0.00001 * mintInputValue;
+  //web3.utils.fromWei(totalPriceWei.toString(), 'ether');
   console.log("mintInputValue = " + mintInputValue);
   totalPrice.innerText = `${price} ${priceType}`;
   mintButton.disabled = false;
@@ -655,7 +658,8 @@ async function mint() {
   const amount = parseInt(document.getElementById("mintInput").value);
   // ATUALIZAR AQUI O MINT PRICE JA QUE ESTA VINDO ZERADO....
   //  DA ONDE ESTA VINDO ESSE info.deploymentCOnfig?!
-  const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
+  const value = BigInt(0.00001) * BigInt(amount);
+  //const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
   console.log(amount + " and " + value);
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
