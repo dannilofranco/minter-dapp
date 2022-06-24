@@ -1,4 +1,4 @@
-const contractAddress = "0xA35FDDc7843A7AB9eb30e5019d9Bc148ee2F399F"; //Replace with your own contract address
+const contractAddress = "0xA35FDDc7843A7AB9eb30e5019d9Bc148ee2F399F"; //Replace with your own contract address                  0xA35FDDc7843A7AB9eb30e5019d9Bc148ee2F399F
 const chain = 'polygon'; // rinkeby or polygon
 
 // Force GIT Sync
