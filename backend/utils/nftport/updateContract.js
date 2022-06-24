@@ -176,7 +176,7 @@
         console.log(`Contract update failed!`);
       }
     } catch (error) {
-      console.log(`CATCH: Contract update failed!`, `ERROR: ${error}`);
+      console.log(`CATCH:222 Contract update failed!`, `ERROR: ${error}`);
     }
   };
 
