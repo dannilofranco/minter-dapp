@@ -8,7 +8,7 @@ const network = NETWORK.eth;
 
 // General metadata for Ethereum
 const namePrefix = "Emo Kids Club";
-const description = "he Emo Kids Club NFT Project is a decentralized initiative to promote the Emo Culture where people can collaborate and have fun!! #EMO is back!!";
+const description = "The Emo Kids Club NFT Project is a decentralized initiative to promote the Emo Culture where people can collaborate and have fun!! #EMO is back!!";
 const baseUri = "ipfs://NewUriToReplace"; // This will be replaced automatically
 
 // If you have selected Solana then the collection starts from 0 automatically
