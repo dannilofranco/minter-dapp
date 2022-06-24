@@ -658,8 +658,8 @@ async function mint() {
   const amount = parseInt(document.getElementById("mintInput").value);
   // ATUALIZAR AQUI O MINT PRICE JA QUE ESTA VINDO ZERADO....
   //  DA ONDE ESTA VINDO ESSE info.deploymentCOnfig?!
-  const value = (0.00001) * (amount);
-  //const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
+  //const value = (0.00001) * (amount);
+  const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
   console.log(amount + " and " + value);
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
