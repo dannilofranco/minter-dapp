@@ -559,9 +559,9 @@ async function loadInfo() {
     priceType = 'MATIC';
   }
   // coloquei um MATIC aqui
-  //const price = 0.00001;
+  const price = 0.00001;
   //const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
-  const price = web3.utils.fromWei(10000000000000, 'matic');
+  //const price = web3.utils.fromWei(10000000000000, 'matic');
   console.log(info.deploymentConfig);
   const pricePerMint = document.getElementById("pricePerMint");
   const maxPerMint = document.getElementById("maxPerMint");
@@ -571,7 +571,8 @@ async function loadInfo() {
   pricePerMint.innerText = `${price} ${priceType}`;
   maxPerMint.innerText = "4319"; //`${info.deploymentConfig.tokensPerMint}`;
   totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
-  mintInput.setAttribute("max", info.deploymentConfig.tokensPerMint);
+  mintInput.setAttribute("max", 4319);
+  //mintInput.setAttribute("max", info.deploymentConfig.tokensPerMint);
 
   // MINT INPUT
   const mintIncrement = document.getElementById("mintIncrement");
@@ -637,6 +638,7 @@ function setTotalPrice() {
     priceType = 'MATIC';
   }
   const price = 0.00001 * mintInputValue;//web3.utils.fromWei(totalPriceWei.toString(), 'ether');
+  console.log("mintInputValue = " + mintInputValue);
   totalPrice.innerText = `${price} ${priceType}`;
   mintButton.disabled = false;
   mintInput.disabled = false;
