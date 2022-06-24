@@ -560,7 +560,8 @@ async function loadInfo() {
   }
   // coloquei um MATIC aqui
   //const price = 0.00001;
-  const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
+  //const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
+  const price = web3.utils.fromWei(10000000000000, 'matic');
   console.log(info.deploymentConfig);
   const pricePerMint = document.getElementById("pricePerMint");
   const maxPerMint = document.getElementById("maxPerMint");
