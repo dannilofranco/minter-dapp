@@ -559,14 +559,16 @@ async function loadInfo() {
     priceType = 'MATIC';
   }
   // coloquei um MATIC aqui
-  const price = 0.00001;//web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
+  //const price = 0.00001;
+  const price = web3.utils.fromWei(info.deploymentConfig.mintPrice, 'ether');
+  console.log(info.deploymentConfig);
   const pricePerMint = document.getElementById("pricePerMint");
   const maxPerMint = document.getElementById("maxPerMint");
   const totalSupply = document.getElementById("totalSupply");
   const mintInput = document.getElementById("mintInput");
 
   pricePerMint.innerText = `${price} ${priceType}`;
-  maxPerMint.innerText = `${info.deploymentConfig.tokensPerMint}`;
+  maxPerMint.innerText = "4319"; //`${info.deploymentConfig.tokensPerMint}`;
   totalSupply.innerText = `${info.deploymentConfig.maxSupply}`;
   mintInput.setAttribute("max", info.deploymentConfig.tokensPerMint);
 
@@ -606,6 +608,12 @@ async function loadInfo() {
 
 }
 
+function dannilo() {
+  console.log("Max Per Mint = " + window.info);
+  // console.log("Max Per Mint = " + `${info.deploymentConfig.tokensPerMint}`);
+ // console.log("Total Supply  = " + `${info.deploymentConfig.maxSupply}`);  
+}
+
 function setTotalPrice() {
   const mintInput = document.getElementById("mintInput");
   const mintInputValue = parseInt(mintInput.value);
@@ -642,6 +650,8 @@ async function mint() {
   mainText.style.color = "white";
 
   const amount = parseInt(document.getElementById("mintInput").value);
+  // ATUALIZAR AQUI O MINT PRICE JA QUE ESTA VINDO ZERADO....
+  //  DA ONDE ESTA VINDO ESSE info.deploymentCOnfig?!
   const value = BigInt(info.deploymentConfig.mintPrice) * BigInt(amount);
   console.log(amount + " and " + value);
   const publicMintActive = await contract.methods.mintingActive().call();
