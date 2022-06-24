@@ -21,6 +21,9 @@ const loadImg = async (_img) => {
 const imageList = [];
 const rawdata = fs.readdirSync(imageDir).forEach((file) => {
   imageList.push(loadImg(`${imageDir}/${file}`));
+  
+  if (imageList.length == 10) ;
+  console.log(imageList.length);
 });
 
 const saveProjectPreviewGIF = async (_data) => {

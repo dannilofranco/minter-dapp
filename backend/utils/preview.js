@@ -9,18 +9,24 @@ const { preview } = require(`${basePath}/src/config.js`);
 const rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
 const metadataList = JSON.parse(rawdata);
 
+const numOfImgs = 20;
+const widthMultipler = 10;
+const overrideThumPerRow = 10;
+
 const saveProjectPreviewImage = async (_data) => {
   // Extract from preview config
   const { thumbWidth, thumbPerRow, imageRatio, imageName } = preview;
   // Calculate height on the fly
-  const thumbHeight = thumbWidth * imageRatio;
+  const thumbHeight = 400;//thumbWidth * imageRatio;
   // Prepare canvas
-  const previewCanvasWidth = thumbWidth * thumbPerRow;
+  const previewCanvasWidth = thumbWidth * widthMultipler  * thumbPerRow;
   const previewCanvasHeight =
-    thumbHeight * Math.ceil(_data.length / thumbPerRow);
+    //thumbHeight * Math.ceil(_data.length / thumbPerRow);
+    //thumbHeight * Math.ceil(numOfImgs  / thumbPerRow);
+    thumbHeight * Math.ceil(numOfImgs  / overrideThumPerRow);
   // Shout from the mountain tops
   console.log(
-    `Preparing a ${previewCanvasWidth}x${previewCanvasHeight} project preview with ${_data.length} thumbnails.`
+    `Preparing a ${previewCanvasWidth}x${previewCanvasHeight} project preview with ${numOfImgs} thumbnails.`
   );
 
   // Initiate the canvas now that we have calculated everything
@@ -30,14 +36,18 @@ const saveProjectPreviewImage = async (_data) => {
 
   // Iterate all NFTs and insert thumbnail into preview image
   // Don't want to rely on "edition" for assuming index
-  for (let index = 100; index < _data.length; index++) {
+  //for (let index = 100; index < _data.length; index++) {
+    for (let index = 0; index < numOfImgs; index++) {
     const nft = _data[index];
-    await loadImage(`${buildDir}/images/${nft.custom_fields.edition}.png`).then((image) => {
+    //await loadImage(`${buildDir}/images/${nft.custom_fields.edition}.png`).then((image) => {
+      await loadImage(`${buildDir}/images/${nft.edition}.png`).then((image) => {
       previewCtx.drawImage(
         image,
-        thumbWidth * (index % thumbPerRow),
-        thumbHeight * Math.trunc(index / thumbPerRow),
-        thumbWidth,
+        //thumbWidth * widthMultipler * (index % thumbPerRow),
+        thumbWidth * widthMultipler * (index % overrideThumPerRow),
+        //thumbHeight * Math.trunc(index / thumbPerRow),
+        thumbHeight * Math.trunc(index / overrideThumPerRow),
+        thumbWidth * widthMultipler,
         thumbHeight
       );
     });
