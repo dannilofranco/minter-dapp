@@ -24,6 +24,7 @@ function updatePageLanguage() {
   const welcomeH1 = document.getElementById("welcomeH1");
   const welcomeH2 = document.getElementById("welcomeH2");
   const welcomeP = document.getElementById("welcomeP");
+  const openseaCallForAction = document.getElementById("openseaCallForAction");
 
   const daysP = document.getElementById("daysP");
   const hoursP = document.getElementById("hoursP");
@@ -100,6 +101,7 @@ function updatePageLanguage() {
     welcomeH1.innerText = welcome_h1_pt;
     welcomeH2.innerText = welcome_h2_pt;
     welcomeP.innerHTML = welcome_p_pt;
+    openseaCallForAction.innerText = opensea_callforaction_pt;
 
     aboutH1.innerText = header_menu_about_pt;
     roadmapH1.innerText = header_menu_roadmap_pt;
@@ -183,6 +185,7 @@ function updatePageLanguage() {
     welcomeH1.innerText = welcome_h1;
     welcomeH2.innerText = welcome_h2;
     welcomeP.innerHTML = welcome_p;
+    openseaCallForAction.innerText = opensea_callforaction;
 
     aboutH1.innerText = header_menu_about;
     roadmapH1.innerText = header_menu_roadmap;
@@ -265,19 +268,21 @@ window.addEventListener("DOMContentLoaded", async () => {
   // welcomeH2.innerText = welcome_h2;
   // welcomeP.innerHTML = welcome_p;
 
+  /*
   if (window.ethereum) {
     window.web3 = new Web3(window.ethereum);
     checkChain();
   } else if (window.web3) {
     window.web3 = new Web3(window.web3.currentProvider);
-  }
+  } 
 
   if (window.web3) {
     // Check if User is already connected by retrieving the accounts
     await window.web3.eth.getAccounts().then(async (addr) => {
       accounts = addr;
     });
-  }
+  } 
+  */
 
   const splide = new Splide(".splide", {
     type: "loop",
@@ -292,6 +297,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   });
   splide.mount();
 
+  
   updateConnectStatus();
   if (MetaMaskOnboarding.isMetaMaskInstalled()) {
     window.ethereum.on("accountsChanged", (newAccounts) => {
@@ -299,6 +305,7 @@ window.addEventListener("DOMContentLoaded", async () => {
       updateConnectStatus();
     });
   }
+  
 
   // English and Portuguese language logic  
   const ptLangFlag = document.getElementById("pt");
@@ -326,7 +333,7 @@ const updateConnectStatus = async () => {
   if (!MetaMaskOnboarding.isMetaMaskInstalled()) {
     (currentLanguage === "pt") ? onboardButton.innerText = install_metamask_pt : onboardButton.innerText = install_metamask;
     // onboardButton.innerText = "Install MetaMask!";
-    onboardButton.onclick = () => {
+    /*onboardButton.onclick = () => {
       //onboardButton.innerText = "Connecting...";
       (currentLanguage === "pt") ? onboardButton.innerText = connecting_pt : onboardButton.innerText = connecting;
       onboardButton.disabled = true;
@@ -335,7 +342,7 @@ const updateConnectStatus = async () => {
       spinner.classList.add('hidden');
       notConnected.classList.remove('hidden');
       notConnected.classList.add('show-not-connected');
-    };
+    };*/
   } else if (accounts && accounts.length > 0) {
     onboardButton.innerText = `✔ ...${accounts[0].slice(-4)}`;
     window.address = accounts[0];
@@ -354,7 +361,7 @@ const updateConnectStatus = async () => {
     spinner.classList.add('hidden');
     notConnected.classList.remove('hidden');
     notConnected.classList.add('show-not-connected');
-    onboardButton.onclick = async () => {
+    /*onboardButton.onclick = async () => {
       await window.ethereum
         .request({
           method: "eth_requestAccounts",
@@ -371,7 +378,7 @@ const updateConnectStatus = async () => {
           window.contract = new web3.eth.Contract(abi, contractAddress);
           loadInfo();
         });
-    };
+    };*/
   }
 };
 

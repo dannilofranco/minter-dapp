@@ -8,6 +8,7 @@ const forceSync = "Force Sync = 4";
 const welcome_h1 = "Welcome to the Emo Kids Club NFT Project!!";
 const welcome_h2 = "Connect to MetaMask to Get Started";
 const welcome_p = 'The Emo Kids Club  NFT Project is a decentralized initiative to promote the Emo Culture where people can collaborate and have fun!!';
+const opensea_callforaction = "The collection is available on OpenSea!! Click below to get your own NFT!!";
 const h1_presale_coming_soon = "NFT Drop Coming Soon!!";
 const h1_presale_mint = "Pre-Sale Minting Open!!";
 const h1_public_mint = "Public Minting Open!!";
@@ -87,10 +88,10 @@ const p_team_member_title_5 = "Marketing Director";
 // Road Map
 const p_roadmap_title_1 = "25 Apr 2022";
 const p_roadmap_content_1 = "Emo Kids Club NFT LAUNCH!!";
-const p_roadmap_title_2 = "Coming Soon";
-const p_roadmap_content_2 = "Mint is Open!";
-const p_roadmap_title_3 = "Coming Soon";
-const p_roadmap_content_3 = "...";
+const p_roadmap_title_2 = "25 June 2022";
+const p_roadmap_content_2 = "Available on OpenSea!!";
+const p_roadmap_title_3 = "∞";
+const p_roadmap_content_3 = "Get yours and share with friends!!!";
 const p_call_for_action = "Did you like the project? Follow us on Twitter and Instagram, and make sure to join the community by clicking the Discord icon below to learn about any updates!";
 
 
@@ -103,6 +104,7 @@ const p_call_for_action = "Did you like the project? Follow us on Twitter and In
 const welcome_h1_pt = "Bem-vindo ao projeto NFT Emo Kids Club!!";
 const welcome_h2_pt = "Conecte a Metamask para começar.";
 const welcome_p_pt = 'O projeto NFT  Emo Kids Club é uma iniciativa decentralizada afim de promover a cultura Emo, onde as pessoas possam colaborar e se divertir!!';
+const opensea_callforaction_pt = "A coleção está disponivél na OpenSea! Clique abaixo e garanta o seu NFT!";
 const h1_presale_coming_soon_pt = "NFT Drop em breve!!";
 const h1_presale_mint_pt = "WhiteList Minting Aberto!!";
 const h1_public_mint_pt = "Minting Público Aberto!!";
@@ -183,10 +185,10 @@ const p_team_member_title_5_pt = "Diretor de Marketing";
 // Road Map
 const p_roadmap_title_1_pt = "25 Abr 2022";
 const p_roadmap_content_1_pt = "LANÇAMENTO Emo Kids Club NFT!!";
-const p_roadmap_title_2_pt = "Em Breve";
-const p_roadmap_content_2_pt = "Mint está disponível!";
-const p_roadmap_title_3_pt = "Em Breve";
-const p_roadmap_content_3_pt = "...";
+const p_roadmap_title_2_pt = "25 Junho 2022";
+const p_roadmap_content_2_pt = "Disponível no OpenSea!!";
+const p_roadmap_title_3_pt = "∞";
+const p_roadmap_content_3_pt = "Garanta o seu e compartilhe com amigos!!!";
 
 const p_call_for_action_pt = "Curtiu o projeto? Siga-nos no Twitter e Instagram, e junte-se a comunidade clicando no icone do Discord abaixo e fique por dentro de todos os detalhes!!";
 
